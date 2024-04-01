@@ -1,10 +1,10 @@
 # PickColor
 
-Pick your screen color.
+Pick your screen color but Windows only.
 
 ## Thanks
 
-Benefited from the following open source projects:
+Inspired by the following open source projects:
 
 - [Fischless](https://github.com/GenshinMatrix/Fischless)
 - [Aegisub](https://github.com/Aegisub/Aegisub)

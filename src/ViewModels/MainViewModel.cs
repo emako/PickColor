@@ -2,6 +2,8 @@
 using CommunityToolkit.Mvvm.Input;
 using PickColor.Controls.Core;
 using PickColor.Core;
+using PickColor.Helpers;
+using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Reflection;
@@ -176,6 +178,12 @@ public sealed partial class MainViewModel : ObservableObject
     public void OpenHomepage()
     {
         _ = Process.Start("https://github.com/emako/PickColor");
+    }
+
+    [RelayCommand]
+    public void CreateStartMenuShortcut()
+    {
+        ShortcutHelper.CreateStartMenuShortcut("PickColor", Assembly.GetEntryAssembly().Location);
     }
 }
 

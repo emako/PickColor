@@ -201,9 +201,17 @@
                                 Background="Transparent"
                                 BorderBrush="Transparent"
                                 CornerRadius="0"
-                                Icon="{wui:SymbolIcon CaretDown24}">
+                                Icon="{wui:SymbolIcon CaretDown16}">
                         <wui:Button.ContextMenu>
                             <ContextMenu FontFamily="{StaticResource TextThemeFontFamily}" FontSize="12">
+                                <MenuItem Command="{Binding CreateStartMenuShortcutCommand}"
+                                          FontSize="12"
+                                          Header="Create Start Menu">
+                                    <MenuItem.Icon>
+                                        <wui:SymbolIcon FontSize="16" Symbol="Pin16" />
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <Separator />
                                 <MenuItem Command="{Binding OpenAboutCommand}"
                                           FontSize="12"
                                           Header="About">
