@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net48</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWPF>true</UseWPF>
+		<UseWindowsForms>true</UseWindowsForms>
+		<LangVersion>12.0</LangVersion>
+		<ApplicationIcon>Assets\Images\Favicon.ico</ApplicationIcon>
+		<AssemblyVersion>1.0.0.0</AssemblyVersion>
+		<FileVersion>1.0.0.0</FileVersion>
+		<Version>$(VersionPrefix)1.0.0.0</Version>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Remove="Assets\Images\*.ico" />
+		<None Remove="Assets\Images\*.png" />
+		<None Remove="Assets\Fonts\*.ttf" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Resource Include="Assets\Images\*.ico" />
+		<Resource Include="Assets\Images\*.png" />
+		<Resource Include="Assets\Fonts\*.ttf" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Costura.Fody" Version="5.7.0" Condition=" '$(Configuration)' == 'Release'">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>compile; runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.77" />
+		<PackageReference Include="Vanara.PInvoke.Gdi32" Version="4.0.0" />
+		<PackageReference Include="Vanara.PInvoke.Kernel32" Version="4.0.0" />
+		<PackageReference Include="Vanara.PInvoke.NtDll" Version="4.0.0" />
+		<PackageReference Include="Vanara.PInvoke.SHCore" Version="4.0.0" />
+		<PackageReference Include="Vanara.PInvoke.User32" Version="4.0.0" />
+		<PackageReference Include="WPF-UI" Version="3.0.0" />
+		<PackageReference Include="ValueConverters" Version="3.0.26" />
+		<PackageReference Include="MouseKeyHook.NetCore" Version="5.6.1.1" />
+		<PackageReference Include="IndexRange" Version="1.0.3" />
+	</ItemGroup>
+	
+</Project>
