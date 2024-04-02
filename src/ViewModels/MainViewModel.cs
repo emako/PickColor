@@ -184,6 +184,8 @@ public sealed partial class MainViewModel : ObservableObject
     public void CreateStartMenuShortcut()
     {
         ShortcutHelper.CreateStartMenuShortcut("PickColor", Assembly.GetEntryAssembly().Location);
+        NotificationHelper.ClearNotice();
+        NotificationHelper.AddNotice("PickColor Notification", "Operation of Create Start Menu", "Create Start Menu successfully.");
     }
 }
 
