@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace PickColor.Core;
@@ -9,13 +10,14 @@ internal static class ColorTransformer
     {
         if (!string.IsNullOrWhiteSpace(rgbColor))
         {
-            rgbColor = rgbColor.Replace(" ", ",");
-            string[] rgb = rgbColor.Split(',');
+            string[] rgb = rgbColor.Split(',', ' ');
+
+            rgb = rgb.Where(x => !string.IsNullOrWhiteSpace(x)).ToArray();
 
             if (rgb.Length >= 3
-             && byte.TryParse(rgb[0], out byte red)
-             && byte.TryParse(rgb[1], out byte green)
-             && byte.TryParse(rgb[2], out byte blue))
+             && byte.TryParse(rgb[0].Trim(), out byte red)
+             && byte.TryParse(rgb[1].Trim(), out byte green)
+             && byte.TryParse(rgb[2].Trim(), out byte blue))
             {
                 r = red;
                 g = green;
