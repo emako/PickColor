@@ -1,6 +1,10 @@
 # PickColor
 
-Pick your screen color but Windows only.
+Pick your screen color but Windows OS only.
+
+## Screen Shot
+
+<img src="assets/image-20240423175110276.png" alt="image-20240423175110276" style="zoom:80%;" />
 
 ## Thanks
 
