@@ -1,6 +1,16 @@
+[![Actions](https://github.com/emako/PickColor/actions/workflows/pickcolor.yml/badge.svg)](https://github.com/emako/PickColor/actions/workflows/pickcolor.yml) [![Platform](https://img.shields.io/badge/platform-Windows-blue?logo=windowsxp&color=1E9BFA)](https://dotnet.microsoft.com/en-us/download/dotnet/latest/runtime)
+
 # PickColor
 
 Pick your screen color simply.
+
+## Color definitions
+
+> Not support alpha color nowaday.
+
+ASS format: `&HBBGGRR&`/ `&HAABBGGRR`
+
+HTML format: `#RRGGBB`/`#RRGGBBAA`
 
 ## Screen Shot
 
