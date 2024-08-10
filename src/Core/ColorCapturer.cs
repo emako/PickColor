@@ -32,6 +32,8 @@ public sealed class ColorCapturer : IDisposable
         graphicsRegion = Graphics.FromImage(bufferRegion);
 
         globalMouseHook = Hook.GlobalEvents();
+        globalMouseHook.KeyUp -= OnGlobalKeyHookKeyUp;
+        globalMouseHook.KeyUp += OnGlobalKeyHookKeyUp;
         globalMouseHook.MouseMove -= OnGlobalMouseHookMouseMove;
         globalMouseHook.MouseMove += OnGlobalMouseHookMouseMove;
         globalMouseHook.MouseUp -= OnGlobalMouseHookMouseUp;
@@ -42,6 +44,7 @@ public sealed class ColorCapturer : IDisposable
     {
         if (globalMouseHook != null)
         {
+            globalMouseHook.KeyUp -= OnGlobalKeyHookKeyUp;
             globalMouseHook.MouseMove -= OnGlobalMouseHookMouseMove;
             globalMouseHook.MouseUp -= OnGlobalMouseHookMouseUp;
             globalMouseHook = null!;
@@ -92,6 +95,15 @@ public sealed class ColorCapturer : IDisposable
         if (buffer != null)
         {
             ColorReceived?.Invoke(this, buffer.GetPixel(0, 0));
+        }
+    }
+
+    private void OnGlobalKeyHookKeyUp(object sender, KeyEventArgs e)
+    {
+        if (e.KeyCode == Keys.Escape)
+        {
+            Stop();
+            Stopped?.Invoke(this, null!);
         }
     }
 
