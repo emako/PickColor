@@ -4,6 +4,7 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using Wpf.Ui.Violeta.Resources;
 
 namespace PickColor.Controls.Core;
 
@@ -78,7 +79,7 @@ public sealed class ColorCapturer : IDisposable
     public void Start()
     {
         IsRunning = true;
-        using Stream stream = ResourceHelper.GetStream("pack://application:,,,/Assets/Images/Eyedropper.png");
+        using Stream stream = ResourcesProvider.GetStream("pack://application:,,,/Assets/Images/Eyedropper.png");
         using Bitmap bitmap = new(stream);
         CursorHelper.SetSystemCursor(bitmap, new Point(0, bitmap.Height));
     }

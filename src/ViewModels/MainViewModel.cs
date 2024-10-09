@@ -3,7 +3,6 @@ using CommunityToolkit.Mvvm.Input;
 using PickColor.Controls.Core;
 using PickColor.Core;
 using PickColor.Helpers;
-using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Reflection;
@@ -15,7 +14,7 @@ namespace PickColor.ViewModels;
 public sealed partial class MainViewModel : ObservableObject
 {
     [ObservableProperty]
-    private string version = $"v{Assembly.GetExecutingAssembly().GetName().Version}";
+    private string version = $"v{Assembly.GetExecutingAssembly().GetName().Version.ToString(3)}";
 
     private ColorCapturer cap = null!;
 
