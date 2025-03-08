@@ -8,11 +8,12 @@
         <UseWindowsForms>true</UseWindowsForms>
         <LangVersion>latest</LangVersion>
         <ApplicationIcon>Assets\Images\Favicon.ico</ApplicationIcon>
-        <AssemblyVersion>1.0.5.0</AssemblyVersion>
-        <FileVersion>1.0.5.0</FileVersion>
-        <Version>$(VersionPrefix)1.0.5.0</Version>
+        <AssemblyVersion>1.0.6</AssemblyVersion>
+        <FileVersion>1.0.6</FileVersion>
+        <Version>$(VersionPrefix)1.0.6</Version>
         <DebugType>embedded</DebugType>
         <ApplicationManifest>app.manifest</ApplicationManifest>
+        <Platforms>AnyCPU</Platforms>
     </PropertyGroup>
 
     <ItemGroup>
