@@ -9,8 +9,8 @@ msbuild ..\src\PickColor.csproj /t:Rebuild /p:Configuration=Release /p:DeployOnB
 del /s /q publish.7z
 7z a publish.7z ..\src\bin\Release\net48\* -t7z -mx=5 -mf=BCJ2 -r -y
 for /f "usebackq delims=" %%i in (`powershell -NoLogo -NoProfile -Command "Get-Content '..\src\PickColor.csproj' | Select-String -Pattern '<AssemblyVersion>(.*?)</AssemblyVersion>' | ForEach-Object { $_.Matches.Groups[1].Value }"`) do @set version=%%i
-del /s /q PickColor_v%version%_win64.7z
+del /s /q PickColor_v%version%_win32.7z
 makemica micasetup.json
-rename publish.7z PickColor_v%version%_win64.7z
+rename publish.7z PickColor_v%version%_win32.7z
 
 @pause

@@ -1,7 +1,7 @@
 {
   "Template": "${MicaDir}/template/default.7z",
   "Package": "./publish.7z",
-  "Output": "./${AppName}_v${Version}_win64.exe",
+  "Output": "./${AppName}_v${Version}_win32.exe",
   "AppName": "PickColor",
   "KeyName": "PickColor",
   "ExeName": "PickColor.exe",
