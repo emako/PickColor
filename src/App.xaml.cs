@@ -2,6 +2,7 @@
 using PickColor.Controls.Core;
 using PickColor.Helpers;
 using System.Windows;
+using Wpf.Ui.Violeta.Appearance;
 
 namespace PickColor;
 
@@ -12,6 +13,8 @@ public partial class App : Application
 
     public App()
     {
+        SystemMenuThemeManager.Apply(SystemMenuTheme.Dark);
+
         IServiceCollection services = new ServiceCollection();
 
         services.AddSingleton<ColorCapturer>();
