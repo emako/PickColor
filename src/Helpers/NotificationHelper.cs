@@ -6,7 +6,7 @@ namespace PickColor.Helpers;
 
 internal static class NotificationHelper
 {
-    public static bool IsVaild
+    public static bool IsValid
     {
         get
         {
@@ -26,7 +26,7 @@ internal static class NotificationHelper
 
     public static void AddNotice(string header, string title, string detail = null!, ToastDuration duration = ToastDuration.Short)
     {
-        if (!IsVaild)
+        if (!IsValid)
         {
             return;
         }
@@ -41,7 +41,7 @@ internal static class NotificationHelper
 
     public static void AddNoticeWithButton(string header, string title, string button, (string, string) arg, ToastDuration duration = ToastDuration.Short)
     {
-        if (!IsVaild)
+        if (!IsValid)
         {
             return;
         }
@@ -56,7 +56,7 @@ internal static class NotificationHelper
 
     public static void ClearNotice()
     {
-        if (!IsVaild)
+        if (!IsValid)
         {
             return;
         }
