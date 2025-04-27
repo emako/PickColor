@@ -3,11 +3,13 @@ using CommunityToolkit.Mvvm.Input;
 using PickColor.Controls.Core;
 using PickColor.Core;
 using PickColor.Helpers;
+using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows;
+using Windows.System;
 
 namespace PickColor.ViewModels;
 
@@ -65,6 +67,14 @@ public sealed partial class MainViewModel : ObservableObject
                 UpdateColorProperty();
             }
         }
+    }
+
+    [ObservableProperty]
+    private bool isUpper = true;
+
+    partial void OnIsUpperChanged(bool value)
+    {
+        UpdateColorProperty();
     }
 
     [ObservableProperty]
@@ -131,7 +141,7 @@ public sealed partial class MainViewModel : ObservableObject
     {
         HasColor = true;
         IsUserHandling = false;
-        HtmlColor = $"#{Red:X2}{Green:X2}{Blue:X2}";
+        HtmlColor = IsUpper ? $"#{Red:X2}{Green:X2}{Blue:X2}".ToUpper() : $"#{Red:X2}{Green:X2}{Blue:X2}".ToLower();
         AssColor = $"&H{Blue:X2}{Green:X2}{Red:X2}&";
         RgbColor = $"{Red},{Green},{Blue}";
         IsUserHandling = true;
@@ -174,9 +184,9 @@ public sealed partial class MainViewModel : ObservableObject
     }
 
     [RelayCommand]
-    public void OpenHomepage()
+    public async Task OpenHomepageAsync()
     {
-        _ = Process.Start("https://github.com/emako/PickColor");
+        await Launcher.LaunchUriAsync(new Uri("https://github.com/emako/PickColor"));
     }
 
     [RelayCommand]

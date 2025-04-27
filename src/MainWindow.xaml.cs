@@ -14,6 +14,8 @@ public partial class MainWindow : FluentWindow
     {
         DataContext = ViewModel = new();
         InitializeComponent();
+
+        HtmlTextBlock.MouseLeftButtonDown += OnHtmlMouseLeftButtonDown;
     }
 
     protected override void OnSourceInitialized(EventArgs e)
@@ -35,5 +37,11 @@ public partial class MainWindow : FluentWindow
     private void OnRegionButtonMouseDown(object sender, MouseButtonEventArgs e)
     {
         ViewModel.TestHit();
+    }
+
+    private void OnHtmlMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+    {
+        ViewModel.IsUpper = !ViewModel.IsUpper;
+        HtmlTextBlock.Text = ViewModel.IsUpper ? "HTML" : "html";
     }
 }
