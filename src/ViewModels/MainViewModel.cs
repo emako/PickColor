@@ -18,7 +18,7 @@ public sealed partial class MainViewModel : ObservableObject
     [ObservableProperty]
     private string version = $"v{Assembly.GetExecutingAssembly().GetName().Version.ToString(3)}";
 
-    private ColorCapturer cap = null!;
+    private readonly ColorCapturer cap = null!;
 
     [ObservableProperty]
     private bool hasColor = false;
